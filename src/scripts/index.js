@@ -3,6 +3,16 @@
         getUserProfile(userName);
     })
 
+    document.getElementById("input-search").addEventListener('keyup', (e) => {
+        const userName = e.target.value;
+        const key = e.which || e.keyCode;
+        const isEnterKeyPressed = key === 13;
+
+        if(isEnterKeyPressed){
+            getUserProfile(userName);
+        }
+    })
+
     async function user(userName){
         const url = `https://api.github.com/users/${userName}`
         const response = await fetch(url);
