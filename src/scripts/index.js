@@ -20,7 +20,7 @@ async function user(userName) {
 }
 
 async function repos(userName) {
-    const url = `https://api.github.com/users/${userName}/repos`
+    const url = `https://api.github.com/users/${userName}/repos?per_page=10`
     const response = await fetch(url);
     return await response.json();
 }
